@@ -14,10 +14,13 @@ import { MisQuinielasPage } from '../pages/mis-quinielas/mis-quinielas';
 import { UnirseAQuinielaPage } from '../pages/unirse-aquiniela/unirse-aquiniela';
 import { QuinielaCreadaPage } from '../pages/quiniela-creada/quiniela-creada';
 import { QuinielaUnidaPage } from '../pages/quiniela-unida/quiniela-unida';
+import { AngularFireModule   } from 'angularfire2';
+import { AngularFireAuthModule} from "angularfire2/auth";
 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FIREBASE_CONFIG } from './app.firebase.config';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
