@@ -13,19 +13,19 @@
     <ion-list id="crearNuevaCuenta-list2">
       <ion-item id="crearNuevaCuenta-input3">
         <ion-label></ion-label>
-        <ion-input type="text" placeholder="Nombre"></ion-input>
+        <ion-input type="text" placeholder="Nombre" [(ngModel)]="user.nombre" name="nombre"></ion-input>
       </ion-item>
       <ion-item id="crearNuevaCuenta-input4">
         <ion-label></ion-label>
-        <ion-input type="email" placeholder="Correo Electrónico"></ion-input>
+        <ion-input type="email" placeholder="Correo Electrónico" [(ngModel)]="user.email" name="correo"></ion-input>
       </ion-item>
       <ion-item id="crearNuevaCuenta-input5">
         <ion-label></ion-label>
-        <ion-input type="text" placeholder="Contraseña"></ion-input>
+        <ion-input type="password" placeholder="Contraseña" [(ngModel)]="user.password" name="contrasenia"></ion-input>
       </ion-item>
       <ion-item id="crearNuevaCuenta-input6">
         <ion-label></ion-label>
-        <ion-input type="text" placeholder="Teléfono de contacto (opcional)"></ion-input>
+        <ion-input type="text" placeholder="Teléfono de contacto (opcional)" [(ngModel)]="user.telefono" name="telefono"></ion-input>
       </ion-item>
       <ion-item id="crearNuevaCuenta-select1">
         <ion-label>
@@ -102,7 +102,7 @@
       </ion-item>
     </ion-list>
     <div class="spacer" style="width:300px;height:10px;" id="crearNuevaCuenta-spacer4"></div>
-    <button id="crearNuevaCuenta-button3" ion-button color="dark" block>
+    <button id="crearNuevaCuenta-button3" ion-button color="dark" on-click="registrar(user)" block>
       Crear cuenta
     </button>
   </form>

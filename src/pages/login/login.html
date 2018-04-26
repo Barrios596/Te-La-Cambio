@@ -7,18 +7,18 @@
     <ion-list id="login-list1">
       <ion-item id="login-input1">
         <ion-label></ion-label>
-        <ion-input type="email" placeholder="Correo Electrónico"></ion-input>
+        <ion-input type="email" placeholder="Correo Electrónico" [(ngModel)]="user.email" name="correo"></ion-input>
       </ion-item>
       <ion-item id="login-input2">
         <ion-label></ion-label>
-        <ion-input type="password" placeholder="Contraseña"></ion-input>
+        <ion-input type="password" placeholder="Contraseña" [(ngModel)]="user.password" name="contrasenia"></ion-input>
       </ion-item>
     </ion-list>
     <div class="spacer" style="width:300px;height:23px;" id="login-spacer1"></div>
-    <button id="login-button1" ion-button color="dark" block on-click="goToMiAlbum()">
+    <button id="login-button1" on-click="login(user)" ion-button color="dark" block >
       Iniciar Sesión
     </button>
-    <button id="login-button2" ion-button clear color="dark" block style="font-weight:300;font-size:15px;" on-click="goToCrearNuevaCuenta()">
+    <button id="login-button2"  ion-button clear color="dark" block style="font-weight:300;font-size:15px;" on-click="goToCrearNuevaCuenta()">
       Toca aquí para crear una cuenta nueva
     </button>
   </form>

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NuevaQuinielaPage } from '../nueva-quiniela/nueva-quiniela';
 import { QuinielaCreadaPage } from '../quiniela-creada/quiniela-creada';
-import { QuinielasPage } from '../quinielas/quinielas';
 import { MisQuinielasPage } from '../mis-quinielas/mis-quinielas';
 import { UnirseAQuinielaPage } from '../unirse-aquiniela/unirse-aquiniela';
 import { QuinielaUnidaPage } from '../quiniela-unida/quiniela-unida';
