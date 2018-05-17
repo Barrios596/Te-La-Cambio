@@ -16,8 +16,8 @@ import { QuinielaCreadaPage } from '../pages/quiniela-creada/quiniela-creada';
 import { QuinielaUnidaPage } from '../pages/quiniela-unida/quiniela-unida';
 import { AngularFireModule   } from 'angularfire2';
 import { AngularFireAuthModule} from "angularfire2/auth";
-
-
+import {EquipoPage} from '../pages/equipo/equipo';
+import {HelpPage} from '../pages/help/help';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FIREBASE_CONFIG } from './app.firebase.config';
@@ -37,7 +37,9 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     MisQuinielasPage,
     UnirseAQuinielaPage,
     QuinielaCreadaPage,
-    QuinielaUnidaPage
+    QuinielaUnidaPage,
+    EquipoPage,
+    HelpPage
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,9 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     MisQuinielasPage,
     UnirseAQuinielaPage,
     QuinielaCreadaPage,
-    QuinielaUnidaPage
+    QuinielaUnidaPage,
+    EquipoPage,
+    HelpPage
   ],
   providers: [
     StatusBar,

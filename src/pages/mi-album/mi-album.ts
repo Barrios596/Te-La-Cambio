@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {EquipoPage} from '../equipo/equipo';
 
 @Component({
   selector: 'page-mi-album',
@@ -8,6 +9,12 @@ import { NavController } from 'ionic-angular';
 export class MiAlbumPage {
 
   constructor(public navCtrl: NavController) {
+
   }
   
+  goToEquipo(params){
+    let data = {pais: params};
+    this.navCtrl.push(EquipoPage,data);
+  }
+
 }

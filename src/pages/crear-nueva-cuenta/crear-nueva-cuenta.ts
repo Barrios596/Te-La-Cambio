@@ -19,18 +19,18 @@ export class CrearNuevaCuentaPage {
     try{
       this.profile.iniciales = [0,0,0,0,0,0,0,0];
       this.profile.estadios = [0,0,0,0,0,0,0,0,0,0,0,0];
-      this.profile.Rusia = [0,0,0,0,0,0,0,0,0,0,0,0];
-      this.profile.ArabiaSaudita = [0,0,0,0,0,0,0,0,0,0,0,0];
-      this.profile.Egipto = [0,0,0,0,0,0,0,0,0,0,0,0];
-      this.profile.Uruguay = [0,0,0,0,0,0,0,0,0,0,0,0];
-      this.profile.Portugal = [0,0,0,0,0,0,0,0,0,0,0,0];
-      this.profile.España = [0,0,0,0,0,0,0,0,0,0,0,0];
-      this.profile.Marruecos = [0,0,0,0,0,0,0,0,0,0,0,0];
-      this.profile.Irán = [0,0,0,0,0,0,0,0,0,0,0,0];
-      this.profile.Francia = [0,0,0,0,0,0,0,0,0,0,0,0];
-      this.profile.Australia = [0,0,0,0,0,0,0,0,0,0,0,0];
-      this.profile.Perú = [0,0,0,0,0,0,0,0,0,0,0,0];
-      this.profile.Argentina = [0,0,0,0,0,0,0,0,0,0,0,0];
+      this.profile.Rusia = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+      this.profile.ArabiaSaudita = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+      this.profile.Egipto = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+      this.profile.Uruguay = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+      this.profile.Portugal = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+      this.profile.España = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+      this.profile.Marruecos = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+      this.profile.Irán = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+      this.profile.Francia = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+      this.profile.Australia = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+      this.profile.Perú = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+      this.profile.Argentina = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
       const result = await this.afAuth.auth.createUserWithEmailAndPassword(user.email,user.password);
       console.log(result);  

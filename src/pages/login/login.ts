@@ -32,7 +32,7 @@ export class LoginPage {
     catch(e){
       console.error(e)
       let toast = this.toastCtrl.create({
-        message: 'El correo ingresado no se encuentra registrado o la contraseña es incorrecta',
+        message: 'El correo ingresado no se encuentra registrado o la contraseña es incorrecta.',
         duration: 3000,
         position: 'top'
       });
