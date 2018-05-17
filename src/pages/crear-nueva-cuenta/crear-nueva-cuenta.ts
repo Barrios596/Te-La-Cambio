@@ -33,6 +33,7 @@ export class CrearNuevaCuentaPage {
       this.profile.Argentina = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
       const result = await this.afAuth.auth.createUserWithEmailAndPassword(user.email,user.password);
+      this.profile.id = this.afAuth.auth.currentUser.uid;
       console.log(result);  
       this.afAuth.authState.take(1).subscribe(auth => {
         this.afDatabase.object(`profile/${auth.uid}`).set(this.profile)
