@@ -18,4 +18,5 @@ export interface Profile {
     Australia: number[] ;
     Perú: number[] ;
     Argentina: number[] ;
+    id: string;
 }
