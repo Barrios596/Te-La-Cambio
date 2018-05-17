@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
 import { QuinielasPage } from '../quinielas/quinielas';
 import { NuevaQuinielaPage } from '../nueva-quiniela/nueva-quiniela';
 import { MisQuinielasPage } from '../mis-quinielas/mis-quinielas';
@@ -11,8 +11,10 @@ import { QuinielaUnidaPage } from '../quiniela-unida/quiniela-unida';
   templateUrl: 'quiniela-creada.html'
 })
 export class QuinielaCreadaPage {
+  codigo: string;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.codigo=this.navParams.get('codigo')
   }
   goToQuinielas(params){
     if (!params) params = {};
