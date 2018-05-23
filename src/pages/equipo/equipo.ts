@@ -56,7 +56,7 @@ export class EquipoPage {
     this.numeros = new Array(20);
     
     this.pais = this.navParams.get('pais');
-    this.itemRef = firebase.database().ref(`profile/${afAuth.auth.currentUser.uid}/${this.pais}`)
+    this.itemRef = firebase.database().ref(`profile/${afAuth.auth.currentUser.uid}/${this.pais}`);
 
     if(this.pais == "Rusia"){
       this.offset=this.offsetRusia;
