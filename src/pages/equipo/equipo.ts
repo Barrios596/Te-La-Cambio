@@ -99,6 +99,10 @@ export class EquipoPage {
       //console.log(this.numeros[i]);
     }
 
+    
+  }
+
+  ionViewWillLoad() {
     this.itemRef.on('value', itemSnapshot => {
       this.cantidades = [];
       itemSnapshot.forEach( itemSnap => {
@@ -111,10 +115,6 @@ export class EquipoPage {
         this.actualizarColor(i);
       }
     });
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EquipoPage');
   }
   //método que se activa al hacer click en uno de los botones de las estampas
   actualizarEstampa(i:number){

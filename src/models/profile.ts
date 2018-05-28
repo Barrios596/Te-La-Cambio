@@ -4,8 +4,7 @@ export interface Profile {
     telefono: string;
     departamento: string;
     //Arreglos que guardan el estado de las estampas de cada país
-    iniciales: number[] ;
-    estadios: number[] ;
+    Iniciales: number[] ;
     Rusia: number[] ;
     ArabiaSaudita: number[] ;
     Egipto: number[] ;

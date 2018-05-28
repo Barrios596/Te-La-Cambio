@@ -28,22 +28,29 @@ export class NuevaQuinielaPage {
         console.log(this.afAuth.auth.currentUser.uid);
         this.user = {
             idProfile: this.afAuth.auth.currentUser.uid,
-            partido1: [-1, -1],
-            partido2: [-1, -1],
-            partido3: [-1, -1],
-            partido4: [-1, -1],
-            partido5: [-1, -1],
-            partido6: [-1, -1]
+            participa1: false,
+            participa2: false,
+            participa3: false,
+            participa4: false,
+            participa5: false,
+            participa6: false,
+            partido1: [0, 0],
+            partido2: [0, 0],
+            partido3: [0, 0],
+            partido4: [0, 0],
+            partido5: [0, 0],
+            partido6: [0, 0]
         }
+        let id=this.makeid();
         this.quiniela = {
             nombre: this.nombre,
+            id: id,
             usuarios: [this.user]
         };
-        let id=this.makeid();
         this.afDatabase.object(`quiniela/${id}`).set(this.quiniela);
         let params = {
-          codigo: id
-
+          codigo: id,
+          name: this.nombre
         };
         this.navCtrl.push(QuinielaCreadaPage, params);
     }

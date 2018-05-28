@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar  color="olivo">
     <ion-title>
       Crear nueva cuenta
     </ion-title>
@@ -28,7 +28,7 @@
         <ion-input type="text" placeholder="Teléfono de contacto (opcional)" [(ngModel)]="user.telefono" [(ngModel)]="profile.telefono" name="telefono"></ion-input>
       </ion-item>
       <ion-item id="crearNuevaCuenta-select1">
-        <ion-select [(ngModel)]="user.departamento" placeholder= "Escoga su departamento" [(ngModel)]="profile.departamento" name="departamento">
+        <ion-select [(ngModel)]="user.departamento" placeholder= "Departamento" [(ngModel)]="profile.departamento" name="departamento">
           <ion-option>Alta Verapaz</ion-option>
           <ion-option>Baja Verapaz</ion-option>
           <ion-option>Chimaltenango</ion-option>

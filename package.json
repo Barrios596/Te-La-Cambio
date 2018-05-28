@@ -53,6 +53,9 @@
             "cordova-plugin-ionic-webview": {},
             "cordova-plugin-splashscreen": {},
             "cordova-plugin-whitelist": {}
-        }
+        },
+        "platforms": [
+            "android"
+        ]
     }
 }

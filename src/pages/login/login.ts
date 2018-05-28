@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { CrearNuevaCuentaPage } from '../crear-nueva-cuenta/crear-nueva-cuenta';
-import { MiAlbumPage } from '../mi-album/mi-album';
 import { TabsControllerPage } from '../tabs-controller/tabs-controller';
 import {AngularFireAuth} from "angularfire2/auth";
 import { User } from '../../models/User';
 import { RecursiveTemplateAstVisitor } from '@angular/compiler';
 import { ToastController } from 'ionic-angular';
+import {ProveedorProvider} from '../../providers/proveedor/proveedor';
 
 @Component({
   selector: 'page-login',
@@ -14,20 +14,17 @@ import { ToastController } from 'ionic-angular';
 })
 export class LoginPage {
   user = {} as User;
-  constructor(private afAuth: AngularFireAuth ,public navCtrl: NavController, private toastCtrl: ToastController) {
+  constructor(private afAuth: AngularFireAuth ,public navCtrl: NavController, private toastCtrl: ToastController, ) {
   }
   goToCrearNuevaCuenta(params){
     if (!params) params = {};
     this.navCtrl.push(CrearNuevaCuentaPage);
-  }goToMiAlbum(params){
-    if (!params) params = {};
-    this.navCtrl.push(TabsControllerPage);
   }
   async login(){
     try{
       const result = await this.afAuth.auth.signInWithEmailAndPassword(this.user.email,this.user.password)
       console.log(result);
-      this.navCtrl.push(TabsControllerPage);
+      this.navCtrl.setRoot(TabsControllerPage);
     }
     catch(e){
       console.error(e)

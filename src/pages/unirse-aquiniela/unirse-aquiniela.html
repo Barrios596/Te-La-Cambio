@@ -1,21 +1,23 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar  color="olivo">
     <ion-title>
       Unirse a quiniela
     </ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page11" style="background-color:#9BC637;">
-  <h4 id="unirseAQuiniela-heading16" style="color:#002626;font-weight:400;text-align:center;">
+  <br>
+  <br>
+  <h4 id="unirseAQuiniela-heading16" style="color:#002626;font-weight:400;text-align:center;" >
     Ingresa el código de la quiniela a la que deseas unirte:
   </h4>
   <form id="unirseAQuiniela-form10">
     <ion-item id="unirseAQuiniela-textarea4">
       <ion-label></ion-label>
-      <ion-textarea placeholder="Ingresa aquí tu código"></ion-textarea>
+      <ion-textarea placeholder="Ingresa aquí tu código" [(ngModel)]="codigo" name="nombre"></ion-textarea>
     </ion-item>
   </form>
-  <button id="unirseAQuiniela-button13" ion-button color="olivo" block on-click="goToQuinielaUnida()">
+  <button id="unirseAQuiniela-button13" ion-button color="olivo" block on-click="unirseAQuiniela()">
     Unirse
   </button>
 </ion-content>

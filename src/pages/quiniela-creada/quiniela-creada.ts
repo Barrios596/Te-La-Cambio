@@ -12,9 +12,11 @@ import { QuinielaUnidaPage } from '../quiniela-unida/quiniela-unida';
 })
 export class QuinielaCreadaPage {
   codigo: string;
+  nombre: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.codigo=this.navParams.get('codigo')
+    this.codigo=this.navParams.get('codigo');
+    this.nombre=this.navParams.get('name');
   }
   goToQuinielas(params){
     if (!params) params = {};

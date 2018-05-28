@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-navbar  color="olivo">
+    <ion-title ng-if="quiniela !== undefined">
+      Quiniela "{{quiniela.nombre}}"
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page9" style="background-color:#9BC637;">
+  <h4 id="cambiarEstampas-heading7" style="color:#002626;text-align:center;">
+      ¡Marca las casillas de los partidos en los que quieres participar y luego ingresa tu predicción!
+    </h4>
+    <p style="color:#002626;text-align:center;">*Presiona el botón de guardar hasta abajo para guardar cambios.</p>
+  <ion-list id="misQuinielas-list9">
+  <ion-card style="color:#EFE7DA;font-weight: 600;background-color: #353d35">
+    <ion-item style="color:#EFE7DA;font-weight: 600;background-color: #353d35">
+      <ion-label style="color:#EFE7DA; text-align: center">Rusia vs Arabia Saudita</ion-label>
+      <ion-toggle [(ngModel)]="user.participa1" color="naranja"></ion-toggle>
+    </ion-item>
+    
+      <ion-row *ngIf="user.participa1">
+        <ion-col ><ion-label style="color:#EFE7DA;">Rusia</ion-label></ion-col>
+        <ion-col> <ion-input type="number" type="number" [(ngModel)]="user.partido1[0]" style="background-color: #EFE7DA;color: #002626;max-width: 60%;"></ion-input></ion-col> 
+        <ion-col> <ion-input type="number" [(ngModel)]="user.partido1[1]" style="background-color: #EFE7DA;color: #002626;max-width: 60%;"></ion-input></ion-col>
+        <ion-col> <ion-label style="color:#EFE7DA;">Arabia Saudita</ion-label></ion-col>
+      </ion-row>
+  </ion-card>
+
+  <ion-card style="color:#EFE7DA;font-weight: 600;background-color: #353d35">
+      <ion-item style="color:#EFE7DA;font-weight: 600;background-color: #353d35">
+        <ion-label style="color:#EFE7DA; text-align: center">Egipto vs Uruguay</ion-label>
+        <ion-toggle [(ngModel)]="user.participa2" color="naranja"></ion-toggle>
+      </ion-item>
+      
+        <ion-row *ngIf="user.participa2">
+          <ion-col ><ion-label style="color:#EFE7DA;">Egipto</ion-label></ion-col>
+          <ion-col> <ion-input type="number" [(ngModel)]="user.partido2[0]" style="background-color: #EFE7DA;color: #002626;max-width: 60%;"></ion-input></ion-col> 
+          <ion-col> <ion-input type="number" [(ngModel)]="user.partido2[1]" style="background-color: #EFE7DA;color: #002626;max-width: 60%;"></ion-input></ion-col>
+          <ion-col> <ion-label style="color:#EFE7DA;">Uruguay</ion-label></ion-col>
+        </ion-row>
+    </ion-card>
+
+    <ion-card style="color:#EFE7DA;font-weight: 600;background-color: #353d35">
+        <ion-item style="color:#EFE7DA;font-weight: 600;background-color: #353d35">
+          <ion-label style="color:#EFE7DA; text-align: center">Marruecos vs Irán</ion-label>
+          <ion-toggle [(ngModel)]="user.participa3" color="naranja"></ion-toggle>
+        </ion-item>
+        
+          <ion-row *ngIf="user.participa3">
+            <ion-col ><ion-label style="color:#EFE7DA;">Marruecos</ion-label></ion-col>
+            <ion-col> <ion-input type="number" [(ngModel)]="user.partido3[0]" style="background-color: #EFE7DA;color: #002626;max-width: 60%;"></ion-input></ion-col> 
+            <ion-col> <ion-input type="number" [(ngModel)]="user.partido3[1]" style="background-color: #EFE7DA;color: #002626;max-width: 60%;"></ion-input></ion-col>
+            <ion-col> <ion-label style="color:#EFE7DA;">Irán</ion-label></ion-col>
+          </ion-row>
+      </ion-card>
+
+      <ion-card style="color:#EFE7DA;font-weight: 600;background-color: #353d35">
+          <ion-item style="color:#EFE7DA;font-weight: 600;background-color: #353d35">
+            <ion-label style="color:#EFE7DA; text-align: center">Portugal vs España</ion-label>
+            <ion-toggle [(ngModel)]="user.participa4" color="naranja"></ion-toggle>
+          </ion-item>
+          
+            <ion-row *ngIf="user.participa4">
+              <ion-col ><ion-label style="color:#EFE7DA;">Portugal</ion-label></ion-col>
+              <ion-col> <ion-input type="number" [(ngModel)]="user.partido4[0]" style="background-color: #EFE7DA;color: #002626;max-width: 60%;"></ion-input></ion-col> 
+              <ion-col> <ion-input type="number" [(ngModel)]="user.partido4[1]" style="background-color: #EFE7DA;color: #002626;max-width: 60%;"></ion-input></ion-col>
+              <ion-col> <ion-label style="color:#EFE7DA;">España</ion-label></ion-col>
+            </ion-row>
+        </ion-card>
+
+        <ion-card style="color:#EFE7DA;font-weight: 600;background-color: #353d35">
+            <ion-item style="color:#EFE7DA;font-weight: 600;background-color: #353d35">
+              <ion-label style="color:#EFE7DA; text-align: center">Francia vs Australia</ion-label>
+              <ion-toggle [(ngModel)]="user.participa5" color="naranja"></ion-toggle>
+            </ion-item>
+            
+              <ion-row *ngIf="user.participa5">
+                <ion-col ><ion-label style="color:#EFE7DA;">Francia</ion-label></ion-col>
+                <ion-col> <ion-input type="number" [(ngModel)]="user.partido5[0]" style="background-color: #EFE7DA;color: #002626;max-width: 60%;"></ion-input></ion-col> 
+                <ion-col> <ion-input type="number" [(ngModel)]="user.partido5[1]" style="background-color: #EFE7DA;color: #002626;max-width: 60%;"></ion-input></ion-col>
+                <ion-col> <ion-label style="color:#EFE7DA;">Australia</ion-label></ion-col>
+              </ion-row>
+          </ion-card>
+
+          <ion-card style="color:#EFE7DA;font-weight: 600;background-color: #353d35">
+              <ion-item style="color:#EFE7DA;font-weight: 600;background-color: #353d35">
+                <ion-label style="color:#EFE7DA; text-align: center">Argentina vs Islandia</ion-label>
+                <ion-toggle [(ngModel)]="user.participa6" color="naranja"></ion-toggle>
+              </ion-item>
+              
+                <ion-row *ngIf="user.participa6">
+                  <ion-col ><ion-label style="color:#EFE7DA;">Argentina</ion-label></ion-col>
+                  <ion-col> <ion-input type="number" [(ngModel)]="user.partido6[0]" style="background-color: #EFE7DA;color: #002626;max-width: 60%;"></ion-input></ion-col> 
+                  <ion-col> <ion-input type="number" [(ngModel)]="user.partido6[1]" style="background-color: #EFE7DA;color: #002626;max-width: 60%;"></ion-input></ion-col>
+                  <ion-col> <ion-label style="color:#EFE7DA;">Islandia</ion-label></ion-col>
+                </ion-row>
+            </ion-card>
+
+  </ion-list>
+  <button ion-button color="naranja" block on-click="guardar()">Guardar</button>
+</ion-content>

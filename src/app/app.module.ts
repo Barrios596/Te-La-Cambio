@@ -22,6 +22,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FIREBASE_CONFIG } from './app.firebase.config';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { ProveedorProvider } from '../providers/proveedor/proveedor';
+import { QuinielaPage} from '../pages/quiniela/quiniela';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     QuinielaCreadaPage,
     QuinielaUnidaPage,
     EquipoPage,
-    HelpPage
+    HelpPage,
+    QuinielaPage
   ],
   imports: [
     BrowserModule,
@@ -64,12 +67,14 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     QuinielaCreadaPage,
     QuinielaUnidaPage,
     EquipoPage,
-    HelpPage
+    HelpPage,
+    QuinielaPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ProveedorProvider
   ]
 })
 export class AppModule {}

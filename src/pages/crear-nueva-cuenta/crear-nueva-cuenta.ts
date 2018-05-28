@@ -5,6 +5,7 @@ import { User } from '../../models/User';
 import { ToastController } from 'ionic-angular';
 import {AngularFireDatabase}    from 'angularfire2/database';
 import { Profile } from '../../models/profile';
+import { TabsControllerPage } from '../tabs-controller/tabs-controller';
 
 @Component({
   selector: 'page-crear-nueva-cuenta',
@@ -17,8 +18,7 @@ export class CrearNuevaCuentaPage {
   }
   async registrar(user: User){
     try{
-      this.profile.iniciales = [0,0,0,0,0,0,0,0];
-      this.profile.estadios = [0,0,0,0,0,0,0,0,0,0,0,0];
+      this.profile.Iniciales = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
       this.profile.Rusia = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
       this.profile.ArabiaSaudita = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
       this.profile.Egipto = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
@@ -38,12 +38,32 @@ export class CrearNuevaCuentaPage {
       this.afAuth.authState.take(1).subscribe(auth => {
         this.afDatabase.object(`profile/${auth.uid}`).set(this.profile)
       })
-      this.navCtrl.pop();
+      this.login();
     }
     catch(e){
       console.error(e);
       let toast = this.toastCtrl.create({
-        message: 'El correo electrónico ingresado ya ha sido usado para otra cuenta',
+        message: 'No ingresó alguna casilla correctamente o el correo electrónico ingresado ya existe.',
+        duration: 3000,
+        position: 'top'
+      });
+      toast.onDidDismiss(() => {
+        console.log('Dismissed toast');
+      });
+    
+      toast.present();
+    }
+  }
+  async login(){
+    try{
+      const result = await this.afAuth.auth.signInWithEmailAndPassword(this.user.email,this.user.password)
+      console.log(result);
+      this.navCtrl.setRoot(TabsControllerPage);
+    }
+    catch(e){
+      console.error(e)
+      let toast = this.toastCtrl.create({
+        message: 'El correo ingresado no se encuentra registrado o la contraseña es incorrecta.',
         duration: 3000,
         position: 'top'
       });

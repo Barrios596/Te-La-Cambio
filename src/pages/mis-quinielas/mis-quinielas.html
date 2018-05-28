@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar  color="olivo">
     <ion-title>
       Mis quinielas
     </ion-title>
@@ -9,36 +9,15 @@
   <h4 id="misQuinielas-heading11" style="color:#002626;text-align:center;">
     Quinielas a las que estás unido:
   </h4>
-  <ion-list id="misQuinielas-list9">
+  <br>
+  <ion-list id="misQuinielas-list9" *ngFor="let quiniela of quinielas" ng-if="quinielas !== undefined" on-tap="irAQuiniela(quiniela)">
     <ion-item-sliding>
-      <ion-item color="none" id="misQuinielas-list-item40">
-        Familia
+      <ion-item style="background-color: rgb(53,61,53); color: #efe7da" id="misQuinielas-list-item40">
+        {{quiniela.nombre}}
         <ion-icon name="arrow-round-back" item-right></ion-icon>
       </ion-item>
       <ion-item-options side="right">
-        <button ion-button color="dark">
-          Salir de quiniela
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-    <ion-item-sliding>
-      <ion-item color="none" id="misQuinielas-list-item41">
-        12SINGLETONS
-        <ion-icon name="arrow-round-back" item-right></ion-icon>
-      </ion-item>
-      <ion-item-options side="right">
-        <button ion-button color="dark">
-          Salir de quiniela
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-    <ion-item-sliding>
-      <ion-item color="none" id="misQuinielas-list-item42">
-        Ingenieros
-        <ion-icon name="arrow-round-back" item-right></ion-icon>
-      </ion-item>
-      <ion-item-options side="right">
-        <button ion-button color="dark">
+        <button ion-button style="background-color: #d65804" on-tap="salirDeQuiniela(quiniela)">
           Salir de quiniela
         </button>
       </ion-item-options>
