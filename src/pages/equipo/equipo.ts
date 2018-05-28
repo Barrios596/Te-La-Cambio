@@ -27,7 +27,7 @@ export class EquipoPage {
   offsetAustralia: number;
   offsetPerú: number;
   offsetArgentina: number;
-
+  offsetIniciales: number;
   //el país es el que se manda desde la página de "Mi Album"
   pais: any;
   offset: number;
@@ -40,7 +40,7 @@ export class EquipoPage {
   public itemRef: firebase.database.Reference;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public afAuth: AngularFireAuth, private afDatabase: AngularFireDatabase) {
-    //this.offset=0;
+    this.offsetIniciales=0;
     this.offsetRusia = 20;
     this.offsetArabia = 40;
     this.offsetEgipto = 60;
@@ -56,10 +56,14 @@ export class EquipoPage {
     this.numeros = new Array(20);
     
     this.pais = this.navParams.get('pais');
+    console.log(this.pais)
     this.itemRef = firebase.database().ref(`profile/${afAuth.auth.currentUser.uid}/${this.pais}`);
 
     if(this.pais == "Rusia"){
       this.offset=this.offsetRusia;
+    }
+    else if(this.pais=="Iniciales"){
+      this.offset = this.offsetIniciales;
     }
     else if(this.pais == "ArabiaSaudita"){
       this.offset=this.offsetArabia;

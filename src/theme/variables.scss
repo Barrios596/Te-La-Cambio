@@ -43,7 +43,10 @@ $colors: (
   naranja: #e55812
 );
 
-
+.tabs-md .tab-button[aria-selected=true] {
+  color: #e55812; /*your  text color */
+  background: #e55812; /* your background color*/
+}
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here

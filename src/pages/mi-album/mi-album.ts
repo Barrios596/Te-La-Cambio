@@ -14,6 +14,7 @@ export class MiAlbumPage {
   
   goToEquipo(params){
     let data = {pais: params};
+    console.log(data);
     this.navCtrl.push(EquipoPage,data);
   }
 
