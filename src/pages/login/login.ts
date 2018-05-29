@@ -7,6 +7,7 @@ import { User } from '../../models/User';
 import { RecursiveTemplateAstVisitor } from '@angular/compiler';
 import { ToastController } from 'ionic-angular';
 import {ProveedorProvider} from '../../providers/proveedor/proveedor';
+import { IntroPage } from '../intro/intro';
 
 @Component({
   selector: 'page-login',
@@ -24,7 +25,8 @@ export class LoginPage {
     try{
       const result = await this.afAuth.auth.signInWithEmailAndPassword(this.user.email,this.user.password)
       console.log(result);
-      this.navCtrl.setRoot(TabsControllerPage);
+      this.navCtrl.setRoot(IntroPage);
+      //this.navCtrl.setRoot(TabsControllerPage);
     }
     catch(e){
       console.error(e)

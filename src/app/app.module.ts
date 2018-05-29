@@ -24,7 +24,7 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { ProveedorProvider } from '../providers/proveedor/proveedor';
 import { QuinielaPage} from '../pages/quiniela/quiniela';
-
+import { IntroPage} from '../pages/intro/intro';
 @NgModule({
   declarations: [
     MyApp,
@@ -42,7 +42,8 @@ import { QuinielaPage} from '../pages/quiniela/quiniela';
     QuinielaUnidaPage,
     EquipoPage,
     HelpPage,
-    QuinielaPage
+    QuinielaPage,
+    IntroPage
   ],
   imports: [
     BrowserModule,
@@ -68,7 +69,8 @@ import { QuinielaPage} from '../pages/quiniela/quiniela';
     QuinielaUnidaPage,
     EquipoPage,
     HelpPage,
-    QuinielaPage
+    QuinielaPage, 
+    IntroPage
   ],
   providers: [
     StatusBar,
