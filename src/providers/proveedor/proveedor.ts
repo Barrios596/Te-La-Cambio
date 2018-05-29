@@ -5,6 +5,7 @@ import { UsuarioQuiniela } from '../../models/UsuarioQuiniela';
 import { Quiniela } from '../../models/quiniela';
 import firebase from 'firebase';
 import { Profile } from '../../models/profile';
+import {Pro} from "@ionic/pro";
 
 @Injectable()
 export class ProveedorProvider {
@@ -14,11 +15,18 @@ export class ProveedorProvider {
   quinielas: Array<Quiniela>;
   usuarios: Array<Profile>;
   auth: AngularFireAuth;
+  usuarioActual: Profile;
   constructor(public afAuth: AngularFireAuth, public afDatabase: AngularFireDatabase, ) {
     console.log('Hello ProveedorProvider Provider');
     this.auth=afAuth;
     this.cargarQuinielas();
+    //this.cargarRepetidas();
     this.id =  afAuth.auth.currentUser.uid;
+  }
+
+  getInfoUser(){
+
+
   }
 
   cargarQuinielas(){
@@ -30,7 +38,7 @@ export class ProveedorProvider {
         for (var i = 0; i<quiniela.usuarios.length;i++){
           if(quiniela.usuarios[i].idProfile==this.id){
             this.quinielas.push(quiniela);
-            console.log(quiniela);
+            //console.log(quiniela);
             break;
           }
         }
@@ -45,7 +53,11 @@ export class ProveedorProvider {
       itemSnapshot.forEach( itemSnap => {
         if(itemSnap.key != this.auth.auth.currentUser.uid){
           this.usuarios.push(itemSnap.val());
-          console.log(itemSnap.val());
+          //console.log(itemSnap.val());
+        }else{
+          this.usuarioActual=itemSnap.val();
+          //console.log("info:");
+          //console.log(this.usuarioActual);
         }
         return false;
       });
