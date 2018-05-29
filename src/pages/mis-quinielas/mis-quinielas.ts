@@ -17,7 +17,7 @@ import {ProveedorProvider} from '../../providers/proveedor/proveedor';
 export class MisQuinielasPage {
   quinielas: Array<Quiniela>;
   usuario: UsuarioQuiniela;
-  constructor(public navCtrl: NavController, public afAuth: AngularFireAuth, public alertCtrl: AlertController, public proveedor: ProveedorProvider, public navParams: NavParams) {
+  constructor(public afDatabase: AngularFireDatabase, public navCtrl: NavController, public afAuth: AngularFireAuth, public alertCtrl: AlertController, public proveedor: ProveedorProvider, public navParams: NavParams) {
     this.quinielas = this.proveedor.quinielas;
   }
   ionViewDidLoad(){
@@ -51,7 +51,24 @@ export class MisQuinielasPage {
         {
           text: 'Salir',
           handler: () => {
-            /*Hacer aquí el método para salir de la quiniela*/
+            let nuevasQuinielas = [];
+            for (var i = 0; i<this.quinielas.length;i++){
+              if(this.quinielas[i].id!=quiniela.id){
+                nuevasQuinielas.push(this.quinielas[i]);
+              }
+            }
+            this.quinielas = nuevasQuinielas;
+            let nuevosUsuarios = [];
+            if(quiniela.usuarios.length>1){
+            for(var j = 0; j<quiniela.usuarios.length;j++){
+              if(quiniela.usuarios[j].idProfile!=this.afAuth.auth.currentUser.uid){
+                nuevosUsuarios.push(quiniela.usuarios[j]);
+              }
+            }
+            this.afDatabase.object(`quiniela/${quiniela.id}/usuarios`).set(nuevosUsuarios);
+            }else{
+              this.afDatabase.object(`quiniela/${quiniela.id}`).remove();
+            }
           }
         }
       ]

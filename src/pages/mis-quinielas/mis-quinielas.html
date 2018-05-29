@@ -10,9 +10,9 @@
     Quinielas a las que estás unido:
   </h4>
   <br>
-  <ion-list id="misQuinielas-list9" *ngFor="let quiniela of quinielas" ng-if="quinielas !== undefined" on-tap="irAQuiniela(quiniela)">
+  <ion-list id="misQuinielas-list9" *ngFor="let quiniela of quinielas" ng-if="quinielas !== undefined">
     <ion-item-sliding>
-      <ion-item style="background-color: rgb(53,61,53); color: #efe7da" id="misQuinielas-list-item40">
+      <ion-item style="background-color: rgb(53,61,53); color: #efe7da" id="misQuinielas-list-item40" on-tap="irAQuiniela(quiniela)">
         {{quiniela.nombre}}
         <ion-icon name="arrow-round-back" item-right></ion-icon>
       </ion-item>

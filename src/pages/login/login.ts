@@ -15,7 +15,7 @@ import { IntroPage } from '../intro/intro';
 })
 export class LoginPage {
   user = {} as User;
-  constructor(private afAuth: AngularFireAuth ,public navCtrl: NavController, private toastCtrl: ToastController, ) {
+  constructor(private afAuth: AngularFireAuth ,public navCtrl: NavController, private toastCtrl: ToastController ) {
   }
   goToCrearNuevaCuenta(params){
     if (!params) params = {};

@@ -4,6 +4,7 @@ import {LoginPage} from '../login/login';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {ProveedorProvider} from "../../providers/proveedor/proveedor";
 import {AngularFireDatabase, AngularFireList}    from 'angularfire2/database';
+import { ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'page-perfil',
@@ -18,7 +19,7 @@ export class PerfilPage {
 
 
   constructor(public navCtrl: NavController, public pro: ProveedorProvider,
-              public afDatabase: AngularFireDatabase, public afAuth: AngularFireAuth) {
+              public afDatabase: AngularFireDatabase, public afAuth: AngularFireAuth, private toastCtrl: ToastController) {
     this.pro.cargarRepetidas();
       this.nombre = this.pro.usuarioActual.nombre;
       this.telefono = this.pro.usuarioActual.telefono;
@@ -30,7 +31,15 @@ export class PerfilPage {
     this.afDatabase.object(`profile/${this.afAuth.auth.currentUser.uid}/nombre`).set(this.nombre);
     this.afDatabase.object(`profile/${this.afAuth.auth.currentUser.uid}/telefono`).set(this.telefono);
     this.afDatabase.object(`profile/${this.afAuth.auth.currentUser.uid}/departamento`).set(this.departamento);
-    
+    let toast = this.toastCtrl.create({
+      message: 'Los cambios fueron guardados',
+      duration: 3000,
+      position: 'top'
+    });
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+    toast.present();
   }
   goToLogin(params){
     if(!params) params={};

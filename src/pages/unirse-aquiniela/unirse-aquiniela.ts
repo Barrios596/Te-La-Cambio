@@ -47,7 +47,7 @@ export class UnirseAQuinielaPage {
         let toast = this.toastCtrl.create({
           message: 'La quiniela ingresada no existe, prueba con otro código.',
           duration: 3000,
-          position: 'bottom'
+          position: 'top'
         });
         toast.onDidDismiss(() => {
           console.log('Dismissed toast');
