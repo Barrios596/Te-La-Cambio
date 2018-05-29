@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {LoginPage} from '../login/login';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {AngularFireDatabase}    from 'angularfire2/database';
 import {ProveedorProvider} from "../../providers/proveedor/proveedor";
+import {AngularFireDatabase, AngularFireList}    from 'angularfire2/database';
 
 @Component({
   selector: 'page-perfil',
@@ -18,13 +18,19 @@ export class PerfilPage {
 
 
   constructor(public navCtrl: NavController, public pro: ProveedorProvider,
-              public afAuth: AngularFireAuth) {
+              public afDatabase: AngularFireDatabase, public afAuth: AngularFireAuth) {
     this.pro.cargarRepetidas();
       this.nombre = this.pro.usuarioActual.nombre;
-      this.usuario = this.pro.usuarioActual.email;
       this.telefono = this.pro.usuarioActual.telefono;
+      console.log(this.telefono);
       this.departamento = this.pro.usuarioActual.departamento;
       //console.log(this.nombre);
+  }
+  guardar(){
+    this.afDatabase.object(`profile/${this.afAuth.auth.currentUser.uid}/nombre`).set(this.nombre);
+    this.afDatabase.object(`profile/${this.afAuth.auth.currentUser.uid}/telefono`).set(this.telefono);
+    this.afDatabase.object(`profile/${this.afAuth.auth.currentUser.uid}/departamento`).set(this.departamento);
+    
   }
   goToLogin(params){
     if(!params) params={};
