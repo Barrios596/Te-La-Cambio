@@ -6,7 +6,7 @@ import { ToastController } from 'ionic-angular';
 import {AngularFireDatabase}    from 'angularfire2/database';
 import { Profile } from '../../models/profile';
 import { TabsControllerPage } from '../tabs-controller/tabs-controller';
-
+import { IntroPage } from '../intro/intro';
 @Component({
   selector: 'page-crear-nueva-cuenta',
   templateUrl: 'crear-nueva-cuenta.html'
@@ -58,7 +58,7 @@ export class CrearNuevaCuentaPage {
     try{
       const result = await this.afAuth.auth.signInWithEmailAndPassword(this.user.email,this.user.password)
       console.log(result);
-      this.navCtrl.setRoot(TabsControllerPage);
+      this.navCtrl.setRoot(IntroPage);
     }
     catch(e){
       console.error(e)
